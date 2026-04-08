@@ -1,0 +1,106 @@
+# =============================================================
+# Crowd Backside — master configuration
+# Copy to config.yaml and fill in your own values.
+# =============================================================
+
+# ── LLM ──────────────────────────────────────────────────────
+llm:
+  base_model: "Qwen/Qwen3-8B"          # HuggingFace model ID or local path
+  sft_output_dir: "checkpoints/sft"
+  dpo_output_dir: "checkpoints/dpo"
+  device_map: "auto"
+  load_in_4bit: true
+  lora:
+    r: 16
+    lora_alpha: 32
+    lora_dropout: 0.05
+    target_modules: ["q_proj", "v_proj", "k_proj", "o_proj"]
+
+# ── Training ─────────────────────────────────────────────────
+training:
+  sft:
+    learning_rate: 2.0e-4
+    num_train_epochs: 3
+    per_device_train_batch_size: 4
+    gradient_accumulation_steps: 8   # effective batch = 32
+    max_seq_length: 2048
+    warmup_ratio: 0.03
+    lr_scheduler_type: "cosine"
+    bf16: true
+  dpo:
+    learning_rate: 1.0e-5
+    num_train_epochs: 1
+    per_device_train_batch_size: 4
+    gradient_accumulation_steps: 8
+    max_prompt_length: 1024
+    max_length: 2048
+    beta: 0.1
+    warmup_ratio: 0.03
+    lr_scheduler_type: "cosine"
+    bf16: true
+
+# ── Data ─────────────────────────────────────────────────────
+data:
+  raw_trajectory_path: "data/raw/trajectories.csv"
+  raw_poi_path: "data/raw/pois.csv"
+  processed_dir: "data/processed"
+  sft_dataset_path: "data/processed/sft_dataset.json"
+  dpo_dataset_path: "data/processed/dpo_dataset.json"
+  train_ratio: 0.8
+  min_trajectory_days: 5
+  min_visits: 20
+
+# ── Agent ────────────────────────────────────────────────────
+agent:
+  # Social role types used for profile assignment
+  roles:
+    - student
+    - office_worker
+    - teacher
+    - night_shift_worker
+    - delivery_rider
+    - retail_employee
+  # Episodic memory
+  memory:
+    max_size: 200          # Maximum memories per agent
+    top_k: 5              # Retrieved memories per decision step
+    time_decay_lambda: 0.05
+    similarity_threshold: 0.85  # Threshold for experience reuse (bypass LLM)
+    env_change_epsilon: 0.3     # Perception difference triggering memory expiry
+  # Intent generation
+  intent:
+    num_candidates: 5     # K candidate intents per decision step
+  # Gravity model
+  behavior:
+    distance_decay_beta: 2.0
+    max_candidate_pois: 30
+
+# ── Simulation ───────────────────────────────────────────────
+simulation:
+  num_agents: 100
+  num_steps: 144          # 144 * 10min = 1 day
+  step_minutes: 10
+  city_bounds:
+    lat_min: 35.0
+    lat_max: 36.0
+    lon_min: 139.0
+    lon_max: 140.0
+  random_seed: 42
+  output_dir: "outputs/simulation"
+
+# ── Database ─────────────────────────────────────────────────
+database:
+  url: "mysql+pymysql://user:password@localhost:3306/crowd_backside"
+
+# ── API ──────────────────────────────────────────────────────
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins:
+    - "http://localhost:5173"
+    - "http://localhost:3000"
+
+# ── Logging ──────────────────────────────────────────────────
+logging:
+  level: "INFO"
+  file: "logs/crowd_backside.log"

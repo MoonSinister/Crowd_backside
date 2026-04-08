@@ -1,0 +1,40 @@
+# Core ML & LLM
+torch>=2.1.0
+transformers>=4.40.0
+peft>=0.10.0          # LoRA / PEFT
+trl>=0.8.6            # SFT + DPO trainers
+accelerate>=0.29.0
+bitsandbytes>=0.43.0  # 4-bit quantisation
+
+# Data & Numerics
+numpy>=1.26.0
+pandas>=2.2.0
+scikit-learn>=1.4.0
+scipy>=1.13.0
+faiss-cpu>=1.8.0      # Efficient vector similarity search (use faiss-gpu on GPU hosts)
+
+# Geo / Spatial
+geopy>=2.4.1          # Haversine distance
+shapely>=2.0.4
+geopandas>=0.14.4
+
+# Simulation
+# repast4py must be installed separately:
+#   pip install repast4py  (requires MPI: sudo apt install libopenmpi-dev)
+
+# API
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+sqlalchemy>=2.0.30
+pymysql>=1.1.1        # MySQL driver
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+python-multipart>=0.0.9
+
+# Utilities
+tqdm>=4.66.0
+pyyaml>=6.0.1
+loguru>=0.7.2
+python-dotenv>=1.0.1
+httpx>=0.27.0
+aiofiles>=23.2.1
