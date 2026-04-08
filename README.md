@@ -49,12 +49,34 @@ cp config/config.example.yaml config/config.yaml
 
 ### 3. Prepare data
 
+**Option A — Use the included synthetic sample data (quickest way to get started):**
+
+```bash
+# Generate synthetic POIs and trajectory CSV files for development/testing
+python -m data.generate_sample_data
+# Optional flags:
+#   --num-users  20   (default: 10)
+#   --num-days   14   (default: 10)
+#   --output-dir data/raw
+```
+
+This creates `data/raw/pois.csv` and `data/raw/trajectories.csv` with realistic urban
+mobility patterns across 5 social roles (office worker, student, delivery rider, etc.).
+
+**Option B — Bring your own data:**
+
+Place your own CSVs in `data/raw/`:
+- `trajectories.csv`: columns `UserID, lat, lon, POI_type, timestamp[, poi_id]`
+- `pois.csv`: columns `poi_id, name, lat, lon, raw_type`
+
+**Preprocess (both options):**
+
 ```bash
 # Preprocess trajectory data
 python -m data.trajectory --input data/raw/trajectories.csv --output data/processed/
 
 # Build city spatial grid from POI data
-python -m data.poi --input data/raw/pois.csv --output data/processed/
+python -m data.poi --input data/raw/pois.csv --output data/processed/pois.json
 ```
 
 ### 4. Build individual profiles and training datasets

@@ -1,0 +1,62 @@
+poi_id,name,lat,lon,raw_type
+poi_0000,Sakura Ramen,35.701356,139.696527,ramen restaurant
+poi_0001,Cafe Verde,35.697389,139.710402,cafe
+poi_0002,Sunrise Soba,35.684372,139.715203,soba restaurant
+poi_0003,Pizza Corner,35.709832,139.681433,restaurant
+poi_0004,Noodle House,35.674283,139.703816,restaurant
+poi_0005,Tea Garden Cafe,35.714732,139.695864,cafe
+poi_0006,FamilyMart East,35.693157,139.701811,convenience store
+poi_0007,7-Eleven North,35.680762,139.698685,convenience store
+poi_0008,Lawson West,35.699746,139.678011,convenience store
+poi_0009,Big Market,35.707542,139.711594,supermarket
+poi_0010,City Mall,35.670032,139.685246,mall
+poi_0011,Farmers Market,35.719188,139.70219,farmers market
+poi_0012,Central Station,35.690373,139.691459,train station
+poi_0013,North Subway,35.711877,139.691948,subway
+poi_0014,South Bus Stop,35.672282,139.678587,bus stop
+poi_0015,East Subway,35.695068,139.720185,subway
+poi_0016,Green Heights,35.72688,139.706093,apartment
+poi_0017,River View Apts,35.658584,139.717576,apartment
+poi_0018,Sunny Residence,35.725164,139.670481,residential
+poi_0019,Park Side Homes,35.650347,139.675698,residential
+poi_0020,Campus Dorms,35.717414,139.729406,apartment
+poi_0021,Central Park,35.699614,139.702519,park
+poi_0022,Riverbank Garden,35.678138,139.71205,park
+poi_0023,Hilltop Open Space,35.71515,139.717178,open space
+poi_0024,Business Tower A,35.690873,139.695983,office
+poi_0025,Tech Hub,35.68403,139.700199,office
+poi_0026,Government Office,35.70425,139.696036,office
+poi_0027,Co-working Space,35.696681,139.702601,workplace
+poi_0028,Cineplex City,35.702268,139.688122,cinema
+poi_0029,Sports Arena,35.665006,139.722536,sport
+poi_0030,Art Museum,35.690926,139.706606,museum
+poi_0031,Karaoke Box,35.706077,139.699168,entertainment
+poi_0032,City University,35.720453,139.725256,university
+poi_0033,High School North,35.709534,139.719953,school
+poi_0034,Public Library,35.694184,139.710424,library
+poi_0035,General Hospital,35.680081,139.674021,hospital
+poi_0036,Community Clinic,35.70512,139.683091,clinic
+poi_0037,Downtown Pharmacy,35.691938,139.687868,pharmacy
+poi_0038,Mini Stop South,35.668452,139.696133,convenience store
+poi_0039,Daily Mart,35.72943,139.682449,convenience store
+poi_0040,Vending Corner,35.653777,139.666406,convenience store
+poi_0041,Express Shop,35.732659,139.710618,convenience store
+poi_0042,West Supermarket,35.660932,139.707116,supermarket
+poi_0043,East Retail Strip,35.722693,139.686682,retail
+poi_0044,Night Market,35.674761,139.661868,farmers market
+poi_0045,Burger Palace,35.658585,139.700593,restaurant
+poi_0046,Sushi Express,35.731774,139.690689,restaurant
+poi_0047,Mountain View Apts,35.645403,139.727081,apartment
+poi_0048,Office Park B,35.675727,139.69367,office
+poi_0049,Lakeside Office,35.729453,139.673341,workplace
+poi_0050,Youth Hostel,35.653093,139.731815,residential
+poi_0051,Tech University,35.736984,139.668572,university
+poi_0052,East Clinic,35.717349,139.668123,clinic
+poi_0053,West Pharmacy,35.648316,139.710389,pharmacy
+poi_0054,Opera House,35.679124,139.677411,theater
+poi_0055,Gym Plus,35.702056,139.66915,sport
+poi_0056,Green Garden,35.668873,139.726698,garden
+poi_0057,Library Annex,35.709225,139.732645,library
+poi_0058,Outdoor Stadium,35.641072,139.685062,sport
+poi_0059,West Park,35.659054,139.671336,park
+poi_0060,Dental Clinic,35.711598,139.705459,clinic

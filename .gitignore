@@ -1,0 +1,59 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# ML model checkpoints (large files — store on object storage instead)
+checkpoints/
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.pth
+
+# Processed data outputs (regenerate from raw data)
+data/processed/
+
+# Simulation outputs
+outputs/
+
+# Logs
+logs/
+*.log
+
+# Node.js (frontend)
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+config/config.yaml
